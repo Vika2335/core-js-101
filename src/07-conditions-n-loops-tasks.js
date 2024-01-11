@@ -14,8 +14,8 @@
  * 3) for the multiples of five return 'Buzz'
  * 4) for numbers which are multiples of both three and five return 'FizzBuzz'
  *
- * @param {number} num
- * @return {any}
+ @param {number} num
+ @return {any}
  *
  * @example
  *   2 =>  2
@@ -27,24 +27,36 @@
  *  21 => 'Fizz'
  *
  */
-function getFizzBuzz(/* num */) {
-  throw new Error('Not implemented');
+function getFizzBuzz( num ) {
+  if (num % 3 === 0 && num % 5 === 0) {
+    return 'FizzBuzz';
+  } else if (num % 3 === 0) {
+    return 'Fizz';
+  } else if (num % 5 === 0) {
+    return 'Buzz';
+  } else {
+    return num;
+  };
 }
 
 
 /**
  * Returns the factorial of the specified integer n.
  *
- * @param {number} n
- * @return {number}
+ @param {number} n
+ @return {number}
  *
  * @example:
  *   1  => 1
  *   5  => 120
  *   10 => 3628800
  */
-function getFactorial(/* n */) {
-  throw new Error('Not implemented');
+function getFactorial( n ) {
+  if (n === 0) {
+    return 1;
+  } else {
+    return n * getFactorial(n - 1);
+  }
 }
 
 
@@ -69,10 +81,10 @@ function getSumBetweenNumbers(/* n1, n2 */) {
  * Returns true, if a triangle can be built with the specified sides a, b, c
  * and false in any other ways.
  *
- * @param {number} a
- * @param {number} b
- * @param {number} c
- * @return {bool}
+ @param {number} a
+ @param {number} b
+ @param {number} c
+ @return {bool}
  *
  * @example:
  *   1,2,3    =>  false
@@ -80,8 +92,8 @@ function getSumBetweenNumbers(/* n1, n2 */) {
  *   10,1,1   =>  false
  *   10,10,10 =>  true
  */
-function isTriangle(/* a, b, c */) {
-  throw new Error('Not implemented');
+function isTriangle( a, b, c ) {
+  return a + b > c && a + c > b && b + c > a;
 }
 
 
@@ -176,11 +188,11 @@ function findFirstSingleChar(/* str */) {
  *
  * Please take attention, that the smaller number should be the first in the notation
  *
- * @param {number} a
- * @param {number} b
- * @param {bool} isStartIncluded
- * @param {bool} isEndIncluded
- * @return {string}
+ @param {number} a
+ @param {number} b
+ @param {bool} isStartIncluded
+ @param {bool} isEndIncluded
+ @return {string}
  *
  * @example
  *   0, 1, true, true   => '[0, 1]'
@@ -191,16 +203,22 @@ function findFirstSingleChar(/* str */) {
  *   5, 3, true, true   => '[3, 5]'
  *
  */
-function getIntervalString(/* a, b, isStartIncluded, isEndIncluded */) {
-  throw new Error('Not implemented');
+function getIntervalString( a, b, isStartIncluded, isEndIncluded ) {
+  const min1 = Math.min(a, b);
+  const max1 = Math.max(a, b);
+
+  const startBracket = isStartIncluded ? '[' : '(';
+  const endBracket = isEndIncluded ? ']' : ')';
+
+  return `${startBracket}${min1}, ${max1}${endBracket}`;
 }
 
 
 /**
  * Reverse the specified string (put all chars in reverse order)
  *
- * @param {string} str
- * @return {string}
+ @param {string} str
+ @return {string}
  *
  * @example:
  * 'The quick brown fox jumps over the lazy dog' => 'god yzal eht revo spmuj xof nworb kciuq ehT'
@@ -208,16 +226,16 @@ function getIntervalString(/* a, b, isStartIncluded, isEndIncluded */) {
  * 'rotator' => 'rotator'
  * 'noon' => 'noon'
  */
-function reverseString(/* str */) {
-  throw new Error('Not implemented');
+function reverseString( str ) {
+  return str.split('').reverse().join('');
 }
 
 
 /**
  * Reverse the specified integer number (put all digits in reverse order)
  *
- * @param {number} num
- * @return {number}
+ @param {number} num
+ @return {number}
  *
  * @example:
  *   12345 => 54321
@@ -225,8 +243,9 @@ function reverseString(/* str */) {
  *   87354 => 45378
  *   34143 => 34143
  */
-function reverseInteger(/* num */) {
-  throw new Error('Not implemented');
+function reverseInteger( num ) {
+  const string = num.toString().split('').reverse().join('')
+  return parseInt(string, 10);
 }
 
 

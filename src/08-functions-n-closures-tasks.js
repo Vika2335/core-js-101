@@ -15,16 +15,18 @@
  * which works like applying function f to the result of applying function g to x, i.e.
  *  getComposition(f,g)(x) = f(g(x))
  *
- * @param {Function} f
- * @param {Function} g
- * @return {Function}
+ @param {Function} f
+ @param {Function} g
+ @return {Function}
  *
  * @example
  *   getComposition(Math.sin, Math.asin)(x) => Math.sin(Math.asin(x))
  *
  */
-function getComposition(/* f, g */) {
-  throw new Error('Not implemented');
+function getComposition( f, g ) {
+  return function (x) {
+    return f(g(x));
+  };
 }
 
 
@@ -44,8 +46,10 @@ function getComposition(/* f, g */) {
  *   power05(16) => 4
  *
  */
-function getPowerFunction(/* exponent */) {
-  throw new Error('Not implemented');
+function getPowerFunction( exponent ) {
+  return function(a) {
+    return a ** exponent;
+  }
 }
 
 
@@ -137,8 +141,8 @@ function logger(/* func, logFunc */) {
 /**
  * Return the function with partial applied arguments
  *
- * @param {Function} fn
- * @return {Function}
+ @param {Function} fn
+ @return {Function}
  *
  * @example
  *   const fn = function(x1,x2,x3,x4) { return  x1 + x2 + x3 + x4; };
@@ -147,8 +151,10 @@ function logger(/* func, logFunc */) {
  *   partialUsingArguments(fn, 'a','b','c')('d') => 'abcd'
  *   partialUsingArguments(fn, 'a','b','c','d')() => 'abcd'
  */
-function partialUsingArguments(/* fn, ...args1 */) {
-  throw new Error('Not implemented');
+function partialUsingArguments( fn, ...args1 ) {
+  return function (...args2) {
+    return fn(...args1, ...args2);
+  };
 }
 
 
@@ -156,8 +162,8 @@ function partialUsingArguments(/* fn, ...args1 */) {
  * Returns the id generator function that returns next integer starting
  * from specified number every time when invoking.
  *
- * @param {Number} startFrom
- * @return {Function}
+ @param {Number} startFrom
+ @return {Function}
  *
  * @example
  *   const getId4 = getIdGenerator(4);
@@ -169,8 +175,11 @@ function partialUsingArguments(/* fn, ...args1 */) {
  *   getId4() => 7
  *   getId10() => 11
  */
-function getIdGeneratorFunction(/* startFrom */) {
-  throw new Error('Not implemented');
+function getIdGeneratorFunction( startFrom ) {
+  let count = startFrom;
+  return function () {
+    return count++;
+  };
 }
 
 
