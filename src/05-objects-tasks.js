@@ -20,11 +20,11 @@
  *    console.log(r.height);      // => 20
  *    console.log(r.getArea());   // => 200
  */
-function Rectangle( width, height ) {
+function Rectangle(width, height) {
   const rectangle = {};
   rectangle.width = width;
   rectangle.height = height;
-  rectangle.getArea = function() {
+  rectangle.getArea = function recTangle() {
     return width * height;
   };
   return rectangle;
@@ -41,7 +41,7 @@ function Rectangle( width, height ) {
  *    [1,2,3]   =>  '[1,2,3]'
  *    { width: 10, height : 20 } => '{"height":10,"width":20}'
  */
-function getJSON( obj ) {
+function getJSON(obj) {
   return JSON.stringify(obj);
 }
 

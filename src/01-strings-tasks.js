@@ -19,7 +19,7 @@
  *   '',  'bb'  => 'bb'
  */
 function concatenateStrings(value1, value2) {
-  return(value1.concat(value2));
+  return (value1.concat(value2));
 }
 
 
@@ -35,7 +35,7 @@ function concatenateStrings(value1, value2) {
  *   ''      => 0
  */
 function getStringLength(value) {
-  return(value.length);
+  return (value.length);
 }
 
 /**
@@ -71,9 +71,8 @@ function extractNameFromTemplate(value) {
 
   if (comma >= 0 && exclamation >= 0) {
     return value.slice(comma, exclamation);
-  } else {
-    return value;
   }
+  return value;
 }
 
 
@@ -149,11 +148,10 @@ function removeFirstOccurrences(str, value) {
  *   '<a>' => 'a'
  */
 function unbracketTag(str) {
-  if (str.startsWith('<') && tag.endsWith('>')) {
+  if (str.startsWith('<') && str.endsWith('>')) {
     return str.slice(1, -1);
-  } else {
-    return str;
   }
+  return str;
 }
 
 
@@ -213,7 +211,7 @@ function extractEmails(str) {
  *             '└──────────┘\n'
  *
  */
-function getRectangleString(/*width, height*/) {
+function getRectangleString(/* width, height */) {
   throw new Error('Not implemented');
 }
 

@@ -23,8 +23,8 @@
  *   getComposition(Math.sin, Math.asin)(x) => Math.sin(Math.asin(x))
  *
  */
-function getComposition( f, g ) {
-  return function (x) {
+function getComposition(f, g) {
+  return function getCo(x) {
     return f(g(x));
   };
 }
@@ -46,10 +46,10 @@ function getComposition( f, g ) {
  *   power05(16) => 4
  *
  */
-function getPowerFunction( exponent ) {
-  return function(a) {
+function getPowerFunction(exponent) {
+  return function getPower(a) {
     return a ** exponent;
-  }
+  };
 }
 
 
@@ -151,8 +151,8 @@ function logger(/* func, logFunc */) {
  *   partialUsingArguments(fn, 'a','b','c')('d') => 'abcd'
  *   partialUsingArguments(fn, 'a','b','c','d')() => 'abcd'
  */
-function partialUsingArguments( fn, ...args1 ) {
-  return function (...args2) {
+function partialUsingArguments(fn, ...args1) {
+  return function partialUsing(...args2) {
     return fn(...args1, ...args2);
   };
 }
@@ -175,10 +175,11 @@ function partialUsingArguments( fn, ...args1 ) {
  *   getId4() => 7
  *   getId10() => 11
  */
-function getIdGeneratorFunction( startFrom ) {
+function getIdGeneratorFunction(startFrom) {
   let count = startFrom;
-  return function () {
-    return count++;
+  return function idGenerator() {
+    count += 1;
+    return count;
   };
 }
 

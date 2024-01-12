@@ -27,16 +27,15 @@
  *  21 => 'Fizz'
  *
  */
-function getFizzBuzz( num ) {
+function getFizzBuzz(num) {
   if (num % 3 === 0 && num % 5 === 0) {
     return 'FizzBuzz';
-  } else if (num % 3 === 0) {
+  } if (num % 3 === 0) {
     return 'Fizz';
-  } else if (num % 5 === 0) {
+  } if (num % 5 === 0) {
     return 'Buzz';
-  } else {
-    return num;
-  };
+  }
+  return num;
 }
 
 
@@ -51,12 +50,11 @@ function getFizzBuzz( num ) {
  *   5  => 120
  *   10 => 3628800
  */
-function getFactorial( n ) {
+function getFactorial(n) {
   if (n === 0) {
     return 1;
-  } else {
-    return n * getFactorial(n - 1);
   }
+  return n * getFactorial(n - 1);
 }
 
 
@@ -92,7 +90,7 @@ function getSumBetweenNumbers(/* n1, n2 */) {
  *   10,1,1   =>  false
  *   10,10,10 =>  true
  */
-function isTriangle( a, b, c ) {
+function isTriangle(a, b, c) {
   return a + b > c && a + c > b && b + c > a;
 }
 
@@ -203,7 +201,7 @@ function findFirstSingleChar(/* str */) {
  *   5, 3, true, true   => '[3, 5]'
  *
  */
-function getIntervalString( a, b, isStartIncluded, isEndIncluded ) {
+function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
   const min1 = Math.min(a, b);
   const max1 = Math.max(a, b);
 
@@ -226,7 +224,7 @@ function getIntervalString( a, b, isStartIncluded, isEndIncluded ) {
  * 'rotator' => 'rotator'
  * 'noon' => 'noon'
  */
-function reverseString( str ) {
+function reverseString(str) {
   return str.split('').reverse().join('');
 }
 
@@ -243,8 +241,8 @@ function reverseString( str ) {
  *   87354 => 45378
  *   34143 => 34143
  */
-function reverseInteger( num ) {
-  const string = num.toString().split('').reverse().join('')
+function reverseInteger(num) {
+  const string = num.toString().split('').reverse().join('');
   return parseInt(string, 10);
 }
 
